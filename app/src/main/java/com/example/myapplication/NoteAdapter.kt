@@ -37,7 +37,7 @@ class NoteAdapter(private val deleteNote: (String) -> Unit) :
         fun bind(note: String, deleteNote: (String) -> Unit) {
             itemView.findViewById<TextView>(R.id.note).text = note
             itemView.findViewById<TextView>(R.id.delete).setOnClickListener {
-                deleteNote.invoke((it as TextView).text.toString())
+                deleteNote.invoke(note)
             }
         }
     }
